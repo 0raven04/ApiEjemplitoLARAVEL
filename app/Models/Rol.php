@@ -7,13 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Rol extends Model
 {
-    // Hacemos referencai a ala tabla usuarios
+    // Hacemos referencia a la tabla roles
     protected $table = 'roles';
-    //Hacaer que los campos sean editables
+    
+    // Desactivar timestamps para que no busque created_at ni updated_at
+    public $timestamps = false;
+
+    // Hacer que los campos sean editables
     protected $fillable = [
         'id',
         'nombre',
     ];
+    
     use HasFactory;
 
     public function usuarios()
